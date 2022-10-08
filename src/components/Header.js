@@ -50,29 +50,23 @@ const Header = () => {
                     </div>
                   </Menu.Item>
                 </div>
-                <div className="px-1 py-4">
+                <div className="px-1 py-3">
                   <Menu.Item>
-                    <button className="flex items-center">
+                    <button className="flex items-center text-sm">
                       <RiAccountCircleLine size={20} className="mr-2" />
                       My Account
                     </button>
                   </Menu.Item>
                   <Menu.Item>
-                    <button className="flex items-center my-2 py-2">
+                    <button className="flex items-center mt-2 py-2 text-sm">
                       <RiFileList3Line size={20} className="mr-2" />
                       My Order
-                    </button>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <button className="flex items-center">
-                      <RiHeart3Line size={20} className="mr-2" />
-                      Wishlist
                     </button>
                   </Menu.Item>
                 </div>
                 <div className="px-1 py-4">
                   <Menu.Item>
-                    <button className="flex items-center">
+                    <button className="flex items-center text-sm">
                       <RiLogoutCircleLine size={20} className="mr-2" />
                       Logout
                     </button>
