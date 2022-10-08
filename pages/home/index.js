@@ -1,6 +1,6 @@
 import React from "react"
 import Head from "next/head"
-import Home from "../../components/Home"
+import Home from "../../src/components/Home"
 
 const index = () => {
   return (
