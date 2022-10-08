@@ -1,6 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import Home from "../../src/components/Home";
+import React from "react"
+import Head from "next/head"
+import Home from "../../components/Home"
 
 const index = () => {
   return (
@@ -12,7 +12,7 @@ const index = () => {
       </Head>
       <Home />
     </>
-  );
-};
+  )
+}
 
-export default index;
+export default index

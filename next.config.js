@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-};
+}
 
 module.exports = {
   nextConfig,
@@ -18,6 +18,6 @@ module.exports = {
         destination: "/home",
         permanent: true,
       },
-    ];
+    ]
   },
-};
+}
