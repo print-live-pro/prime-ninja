@@ -9,6 +9,7 @@ const index = () => {
         <title>Prime Ninja</title>
         <meta property="og:title" content="Prime Ninja" key="title" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
       </Head>
       <Home />
     </>

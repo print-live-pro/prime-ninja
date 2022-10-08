@@ -5,7 +5,6 @@ import { Menu, Transition } from "@headlessui/react"
 import {
   RiUser3Line,
   RiShoppingCartLine,
-  RiUser6Line,
   RiAccountCircleLine,
   RiFileList3Line,
   RiHeart3Line,
