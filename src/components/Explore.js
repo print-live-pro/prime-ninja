@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { createContext, useState } from "react"
+import { connect } from "react-redux"
 import Cards from "../utils/Cards"
 import {
   printer1Products,
@@ -6,17 +7,21 @@ import {
   productTabs,
 } from "../utils/consts"
 
-const Explore = () => {
+export const CartContext = createContext()
+
+const Explore = ({ products }) => {
   const [activeTab, setActiveTab] = useState("printer1")
-  const [activeList, setActiveList] = useState(printer1Products)
+  const [activeList, setActiveList] = useState(products)
 
   const productsMap = {
-    printer1: printer1Products,
+    printer1: products,
     printer2: printer2Products,
-    printer3: printer1Products,
+    printer3: products,
     printer4: printer2Products,
-    printer5: printer1Products,
+    printer5: products,
   }
+
+  const addToCartHandler = (props) => {}
 
   const activeItemHandler = (title) => {
     setActiveTab(title)
@@ -56,7 +61,13 @@ const Explore = () => {
       <div className="mx-4 grid gap-6 grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3">
         {activeList.map((item) => {
           const { id } = item
-          return <Cards key={id} {...item} />
+          return (
+            <Cards
+              key={id}
+              {...item}
+              addToCartHandler={() => addToCartHandler(item)}
+            />
+          )
         })}
       </div>
       <div className="text-center my-10 mx-4">
@@ -71,4 +82,10 @@ const Explore = () => {
   )
 }
 
-export default Explore
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+  }
+}
+
+export default connect(mapStateToProps)(Explore)

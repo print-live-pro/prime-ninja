@@ -21,7 +21,7 @@ import RegisterForm from "../utils/RegisterForm"
 import Modal from "../utils/Modal"
 
 const Header = () => {
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState(true)
   const [openLogin, setOpenLogin] = useState(false)
   const [openRegister, setOpenRegister] = useState(false)
   return (
