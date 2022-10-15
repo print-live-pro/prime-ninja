@@ -1,5 +1,7 @@
 import { Printer1, Printer2 } from "../../public/assets"
 
+export const firebaseAPIKey = "AIzaSyBqWeG5J_8reZgbaB7F1BIwhzahP9d7oh4"
+
 export const productTabs = [
   {
     title: "printer1",

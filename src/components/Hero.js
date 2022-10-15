@@ -33,7 +33,7 @@ const Hero = () => {
           ></button>
         </div>
         <div className="carousel-inner relative w-full overflow-hidden">
-          <div className="carousel-item active relative float-left w-full h-[70vh]">
+          <div className="carousel-item active relative float-left w-full h-[86vh]">
             <Image src={HeroImg2} className="block w-full" alt="..." />
             <div className="carousel-caption hidden md:block absolute text-center">
               <h5 className="text-xl">First slide label</h5>
@@ -42,8 +42,12 @@ const Hero = () => {
               </p>
             </div>
           </div>
-          <div className="carousel-item relative float-left w-full h-[70vh]">
-            <Image src={HeroImg2} className="block w-full h-50vh" alt="..." />
+          <div className="carousel-item relative float-left w-full h-[86vh]">
+            <Image
+              src={HeroImg2}
+              className="block w-full h-50vh cover"
+              alt="..."
+            />
             <div className="carousel-caption hidden md:block absolute text-center">
               <h5 className="text-xl">Second slide label</h5>
               <p>
@@ -51,7 +55,7 @@ const Hero = () => {
               </p>
             </div>
           </div>
-          <div className="carousel-item relative float-left w-full h-[70vh]">
+          <div className="carousel-item relative float-left w-full h-[86vh]">
             <Image src={HeroImg2} className="block w-full" alt="..." />
             <div className="carousel-caption hidden md:block absolute text-center">
               <h5 className="text-xl">Third slide label</h5>

@@ -1,41 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../../config/firebase"
+import { showToast } from "./common"
 
 const RegisterForm = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  })
+
+  const registerHandler = async (e) => {
+    e.preventDefault()
+    const { email, password } = data
+    try {
+      await createUserWithEmailAndPassword(auth, email, password)
+      showToast("Sign up successful!")
+    } catch (err) {
+      showToast(err.message, "err")
+    }
+  }
   return (
     <div className="block p-6 max-w-sm">
-      <form>
+      <form onSubmit={registerHandler}>
         <div className="form-group mb-6">
           <label
-            for="exampleInputName"
-            className="form-label inline-block mb-2 text-gray-700"
-          >
-            Full name
-          </label>
-          <input
-            type="text"
-            className="form-control
-          block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            id="exampleInputName"
-            aria-describedby="emailHelp"
-            placeholder="Enter full name"
-          />
-        </div>
-        <div className="form-group mb-6">
-          <label
-            for="exampleInputEmail1"
+            htmlFor="exampleInputEmail1"
             className="form-label inline-block mb-2 text-gray-700"
           >
             Email address
@@ -60,11 +49,18 @@ const RegisterForm = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
+            value={data.email}
+            onChange={(e) => {
+              setData({
+                ...data,
+                email: e.target.value,
+              })
+            }}
           />
         </div>
         <div className="form-group mb-6">
           <label
-            for="exampleInputPassword1"
+            htmlFor="exampleInputPassword1"
             className="form-label inline-block mb-2 text-gray-700"
           >
             Password
@@ -87,33 +83,13 @@ const RegisterForm = () => {
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             id="exampleInputPassword1"
             placeholder="Password"
-          />
-        </div>
-        <div className="form-group mb-6">
-          <label
-            for="exampleInputPassword1"
-            className="form-label inline-block mb-2 text-gray-700"
-          >
-            Mobile number
-          </label>
-          <input
-            type="tel"
-            className="form-control block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-white bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            id="exampleInputPassword1"
-            placeholder="Mobile number"
+            value={data.password}
+            onChange={(e) => {
+              setData({
+                ...data,
+                password: e.target.value,
+              })
+            }}
           />
         </div>
         <button

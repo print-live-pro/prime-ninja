@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react"
 import { connect } from "react-redux"
+import { ADD_TO_CART } from "../redux/cart/actionTypes"
 import Cards from "../utils/Cards"
 import {
   printer1Products,
@@ -9,7 +10,7 @@ import {
 
 export const CartContext = createContext()
 
-const Explore = ({ products }) => {
+const Explore = ({ products, addToCart }) => {
   const [activeTab, setActiveTab] = useState("printer1")
   const [activeList, setActiveList] = useState(products)
 
@@ -20,8 +21,6 @@ const Explore = ({ products }) => {
     printer4: printer2Products,
     printer5: products,
   }
-
-  const addToCartHandler = (props) => {}
 
   const activeItemHandler = (title) => {
     setActiveTab(title)
@@ -59,13 +58,13 @@ const Explore = ({ products }) => {
         </ul>
       </div>
       <div className="mx-4 grid gap-6 grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3">
-        {activeList.map((item) => {
+        {activeList?.map((item) => {
           const { id } = item
           return (
             <Cards
               key={id}
               {...item}
-              addToCartHandler={() => addToCartHandler(item)}
+              addToCartHandler={() => addToCart(item.id)}
             />
           )
         })}
@@ -88,4 +87,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Explore)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch({ type: ADD_TO_CART, payload: { id: id } }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Explore)

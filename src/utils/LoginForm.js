@@ -1,12 +1,31 @@
-import React from "react"
+import React, { useState } from "react"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../../config/firebase"
+import { showToast } from "./common"
 
 const LoginForm = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  })
+
+  const handleLogin = async (e) => {
+    const { email, password } = data
+    e.preventDefault()
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+      showToast("Sign in successful!")
+    } catch (err) {
+      showToast(err.message, "err")
+    }
+  }
+
   return (
     <div className="block p-6 max-w-sm">
-      <form>
+      <form onSubmit={handleLogin}>
         <div className="form-group mb-6">
           <label
-            for="exampleInputEmail1"
+            htmlFor="exampleInputEmail1"
             className="form-label inline-block mb-2 text-gray-700"
           >
             Email address
@@ -31,11 +50,19 @@ const LoginForm = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
+            value={data.email}
+            onChange={(e) =>
+              setData({
+                ...data,
+                email: e.target.value,
+              })
+            }
+            required
           />
         </div>
         <div className="form-group mb-6">
           <label
-            for="exampleInputPassword1"
+            htmlFor="exampleInputPassword1"
             className="form-label inline-block mb-2 text-gray-700"
           >
             Password
@@ -58,6 +85,14 @@ const LoginForm = () => {
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             id="exampleInputPassword1"
             placeholder="Password"
+            value={data.password}
+            onChange={(e) =>
+              setData({
+                ...data,
+                password: e.target.value,
+              })
+            }
+            required
           />
         </div>
         <button

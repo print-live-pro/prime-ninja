@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useEffect, useState } from "react"
+import { connect } from "react-redux"
 import { Menu, Transition } from "@headlessui/react"
+import { onAuthStateChanged, signOut } from "firebase/auth"
 import {
   RiAccountCircleLine,
   RiFileList3Line,
@@ -9,27 +11,71 @@ import {
   RiLoginCircleLine,
   RiBook2Line,
 } from "react-icons/ri"
-import {
-  CartIcon,
-  Logo,
-  Printer1,
-  Profile,
-  ProfileIcon,
-} from "../../public/assets"
+import { CartIcon, Logo, Profile, ProfileIcon } from "../../public/assets"
 import LoginForm from "../utils/LoginForm"
 import RegisterForm from "../utils/RegisterForm"
 import Modal from "../utils/Modal"
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../redux/cart/actionTypes"
+import { auth } from "../../config/firebase"
+import { showToast } from "../utils/common"
 
-const Header = () => {
-  const [isLogin, setIsLogin] = useState(true)
+const Header = ({ cart, addToCart, removeToCart }) => {
+  const [user, setUser] = useState(null)
   const [openLogin, setOpenLogin] = useState(false)
   const [openRegister, setOpenRegister] = useState(false)
+  const [cartCount, setCartCount] = useState(0)
+
+  useEffect(() => {
+    let count = cart.length
+    setCartCount(count)
+  }, [cart, cartCount])
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser({
+          uid: user.uid,
+          email: user.email,
+        })
+        setOpenRegister(false)
+        setOpenLogin(false)
+      } else {
+        setUser(null)
+      }
+    })
+
+    return () => unsubscribe()
+  }, [])
+
+  const logout = async () => {
+    setUser(null)
+    await signOut(auth)
+    showToast("Logout successful!")
+  }
+
+  const addCartHandler = (e, id) => {
+    e.preventDefault()
+    return addToCart(id)
+  }
+
+  const removeCartHandler = (e, id) => {
+    e.preventDefault()
+    return removeToCart(id)
+  }
+
+  let username = ""
+  let useremail = ""
+  if (user !== null) {
+    const { email } = user
+    username = email.split("@")[0]
+    useremail = email
+  }
   return (
     <>
       <div className="flex justify-between p-5 items-center">
         <Image src={Logo} alt="company-logo" className="w-3 h-3" />
         <div className="flex">
-          {isLogin ? (
+          {user !== null ? (
             <div className="top-16 w-56 text-right z-50">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
@@ -56,8 +102,8 @@ const Header = () => {
                             className="w-10 object-contain h-10 rounded-full"
                           />
                           <div className="pl-4">
-                            <h1 className="text-md">Eden Smith</h1>
-                            <p className="text-sm">Los Angeles, LA</p>
+                            <h1 className="text-md">{username}</h1>
+                            <p className="text-sm">{useremail}</p>
                           </div>
                         </div>
                       </Menu.Item>
@@ -78,7 +124,10 @@ const Header = () => {
                     </div>
                     <div className="px-1 py-2">
                       <Menu.Item>
-                        <button className="flex items-center text-sm hover:bg-neutral-100 w-full p-2 transition duration-150 ease-in-out rounded-lg">
+                        <button
+                          className="flex items-center text-sm hover:bg-neutral-100 w-full p-2 transition duration-150 ease-in-out rounded-lg"
+                          onClick={() => logout()}
+                        >
                           <RiLogoutCircleLine size={20} className="mr-2" />
                           Logout
                         </button>
@@ -136,6 +185,7 @@ const Header = () => {
               <div>
                 <Menu.Button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full text-slate-700 hover:bg-slate-100 focus:outline-none flex items-center justify-center">
                   <Image src={CartIcon} alt="cart" />
+                  <sup>{cartCount}</sup>
                 </Menu.Button>
               </div>
               <Transition
@@ -153,42 +203,66 @@ const Header = () => {
                     <Menu.Item>
                       <div className="max-h-[60vh] overflow-y-auto hiddenScrollbar">
                         <div className="divide-y divide-slate-100">
-                          <div className="flex justify-between py-5 last:pb-0">
-                            <div className="relative h-20 w-20 items-center flex overflow-hidden rounded-xl bg-slate-100">
-                              <Image src={Printer1} alt="Rey Nylon Backpack" />
-                            </div>
-                            <div className="ml-4 flex flex-1 flex-col">
-                              <div>
-                                <div className="flex justify-between ">
-                                  <div>
-                                    <h3 className="text-base font-medium ">
-                                      <a href="/ciseco/product-detail">
-                                        HP Printer
-                                      </a>
-                                    </h3>
+                          {cart.length > 0 &&
+                            cart.map((item) => {
+                              const { id, title, imgSrc, price, qty } = item
+                              return (
+                                <div
+                                  key={id}
+                                  className="flex justify-between py-5 last:pb-0"
+                                >
+                                  <div className="relative h-20 w-20 items-center flex overflow-hidden rounded-xl bg-slate-100">
+                                    <Image
+                                      src={imgSrc}
+                                      alt="Rey Nylon Backpack"
+                                    />
                                   </div>
-                                  <div className="mt-0.5">
-                                    <div className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium">
-                                      <span className="text-green-500 !leading-none">
-                                        $74.00
-                                      </span>
+                                  <div className="ml-4 flex flex-1 flex-col">
+                                    <div>
+                                      <div className="flex justify-between ">
+                                        <div>
+                                          <h3 className="text-base font-medium ">
+                                            <a href="/ciseco/product-detail">
+                                              {title}
+                                            </a>
+                                          </h3>
+                                        </div>
+                                        <div className="mt-0.5">
+                                          <div className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium">
+                                            <span className="text-green-500 !leading-none">
+                                              $ {price * qty}
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className="flex flex-1 items-end justify-between text-sm">
+                                      <p className="text-gray-500 mr-2">
+                                        Qty {qty}
+                                      </p>
+                                      <div className="flex">
+                                        <button
+                                          type="button"
+                                          className="font-medium text-green-600 mr-5"
+                                          onClick={(e) => addCartHandler(e, id)}
+                                        >
+                                          Add more
+                                        </button>
+                                        <button
+                                          type="button"
+                                          className="font-medium text-red-500"
+                                          onClick={(e) =>
+                                            removeCartHandler(e, id)
+                                          }
+                                        >
+                                          Remove
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div className="flex flex-1 items-end justify-between text-sm">
-                                <p className="text-gray-500">Qty 1</p>
-                                <div className="flex">
-                                  <button
-                                    type="button"
-                                    className="font-medium text-primary-6000"
-                                  >
-                                    Remove
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                              )
+                            })}
                         </div>
                       </div>
                     </Menu.Item>
@@ -239,4 +313,17 @@ const Header = () => {
   )
 }
 
-export default Header
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch({ type: ADD_TO_CART, payload: { id } }),
+    removeToCart: (id) => dispatch({ type: REMOVE_FROM_CART, payload: { id } }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
