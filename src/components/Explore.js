@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import React, { createContext, useState } from "react"
 import { connect } from "react-redux"
 import { ADD_TO_CART } from "../redux/cart/actionTypes"
@@ -10,22 +11,35 @@ import {
 
 export const CartContext = createContext()
 
-const Explore = ({ products, addToCart }) => {
+const Explore = ({ addToCart }) => {
   const [activeTab, setActiveTab] = useState("printer1")
-  const [activeList, setActiveList] = useState(products)
+  const [activeList, setActiveList] = useState(printer1Products)
+
+  const router = useRouter()
 
   const productsMap = {
-    printer1: products,
+    printer1: printer1Products,
     printer2: printer2Products,
-    printer3: products,
+    printer3: printer1Products,
     printer4: printer2Products,
-    printer5: products,
+    printer5: printer1Products,
   }
 
   const activeItemHandler = (title) => {
     setActiveTab(title)
     setActiveList(productsMap[title])
   }
+
+  const routeToPrinters = () => {
+    router.push(
+      {
+        pathname: "/printers",
+        query: { data: JSON.stringify(activeList) },
+      },
+      "/printers"
+    )
+  }
+
   return (
     <div className="py-10 bg-white">
       <h1 className="text-4xl font-bold text-center">Start exploring.</h1>
@@ -64,7 +78,7 @@ const Explore = ({ products, addToCart }) => {
             <Cards
               key={id}
               {...item}
-              addToCartHandler={() => addToCart(item.id)}
+              addToCartHandler={() => addToCart(item)}
             />
           )
         })}
@@ -73,6 +87,7 @@ const Explore = ({ products, addToCart }) => {
         <button
           type="button"
           className="nc-Button relative inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium py-1 px-4 sm:py-1.5 sm:px-6  ttnc-ButtonPrimary disabled:bg-opacity-90 bg-slate-900 hover:bg-slate-800 text-slate-50 shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000"
+          onClick={() => routeToPrinters()}
         >
           Show me more
         </button>
@@ -82,14 +97,12 @@ const Explore = ({ products, addToCart }) => {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    products: state.products,
-  }
+  return {}
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => dispatch({ type: ADD_TO_CART, payload: { id: id } }),
+    addToCart: (item) => dispatch({ type: ADD_TO_CART, payload: { item } }),
   }
 }
 

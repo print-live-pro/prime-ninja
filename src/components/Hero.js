@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import { HeroImg2 } from "../../public/assets"
+import { CarouselImg1, CarouselImg2, CarouselImg3 } from "../../public/assets"
 
 const Hero = () => {
   return (
@@ -34,32 +34,28 @@ const Hero = () => {
         </div>
         <div className="carousel-inner relative w-full overflow-hidden">
           <div className="carousel-item active relative float-left w-full h-[86vh]">
-            <Image src={HeroImg2} className="block w-full" alt="..." />
+            <Image src={CarouselImg1} className="w-full" alt="hp printer" />
             <div className="carousel-caption hidden md:block absolute text-center">
-              <h5 className="text-xl">First slide label</h5>
-              <p>
+              <h5 className="text-xl text-black font-bold">HP Printers</h5>
+              <p className="text-black">
                 Some representative placeholder content for the first slide.
               </p>
             </div>
           </div>
           <div className="carousel-item relative float-left w-full h-[86vh]">
-            <Image
-              src={HeroImg2}
-              className="block w-full h-50vh cover"
-              alt="..."
-            />
+            <Image src={CarouselImg2} className="w-full" alt="lg printer" />
             <div className="carousel-caption hidden md:block absolute text-center">
-              <h5 className="text-xl">Second slide label</h5>
-              <p>
+              <h5 className="text-xl text-black font-bold">LG Printers</h5>
+              <p className="text-black">
                 Some representative placeholder content for the second slide.
               </p>
             </div>
           </div>
           <div className="carousel-item relative float-left w-full h-[86vh]">
-            <Image src={HeroImg2} className="block w-full" alt="..." />
+            <Image src={CarouselImg3} className="w-full" alt="dell printer3" />
             <div className="carousel-caption hidden md:block absolute text-center">
-              <h5 className="text-xl">Third slide label</h5>
-              <p>
+              <h5 className="text-xl text-black font-bold">Dell Printers</h5>
+              <p className="text-black">
                 Some representative placeholder content for the third slide.
               </p>
             </div>

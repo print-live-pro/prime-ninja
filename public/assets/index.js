@@ -6,6 +6,9 @@ import Profile from "./profile.png"
 import Printer2 from "./printer2.png"
 import ProfileIcon from "./profileIcon.svg"
 import CartIcon from "./cart.svg"
+import CarouselImg1 from "./carousel-img-1.jpg"
+import CarouselImg2 from "./carousel-img-2.jpg"
+import CarouselImg3 from "./carousel-img-3.jpg"
 
 export {
   Logo,
@@ -16,4 +19,7 @@ export {
   Printer2,
   ProfileIcon,
   CartIcon,
+  CarouselImg1,
+  CarouselImg2,
+  CarouselImg3,
 }
