@@ -18,18 +18,26 @@ import Modal from "../utils/Modal"
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../redux/cart/actionTypes"
 import { auth } from "../../config/firebase"
 import { showToast } from "../utils/common"
+import { useRouter } from "next/router"
+import CartItems from "../utils/CartItems"
+import CartSubTotal from "../utils/CartSubTotal"
 
 const Header = ({ cart, addToCart, removeToCart }) => {
+  const router = useRouter()
+
+  const [subTotal, setSubTotal] = useState(null)
   const [user, setUser] = useState(null)
   const [openLogin, setOpenLogin] = useState(false)
   const [openRegister, setOpenRegister] = useState(false)
   const [cartCount, setCartCount] = useState(0)
 
+  // cart item count effect
   useEffect(() => {
     let count = cart.length
     setCartCount(count)
   }, [cart, cartCount])
 
+  // auth effect
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -47,20 +55,40 @@ const Header = ({ cart, addToCart, removeToCart }) => {
     return () => unsubscribe()
   }, [])
 
+  // subtotal effect
+  useEffect(() => {
+    let total = 0
+    if (cartCount !== 0) {
+      cart.forEach((item) => {
+        const { price, qty } = item
+        total += price * qty
+      })
+      setSubTotal(total)
+    }
+  }, [cart, setSubTotal, cartCount])
+
   const logout = async () => {
     setUser(null)
     await signOut(auth)
     showToast("Logout successful!")
   }
 
-  const addCartHandler = (e, id) => {
+  const addCartHandler = (e, item) => {
     e.preventDefault()
-    return addToCart(id)
+    return addToCart(item)
   }
 
   const removeCartHandler = (e, id) => {
     e.preventDefault()
     return removeToCart(id)
+  }
+
+  const onPress = () => {
+    if (cartCount === 0) {
+      showToast("Please add items to cart.", "info")
+    } else {
+      router.push("/checkout")
+    }
   }
 
   let username = ""
@@ -198,96 +226,18 @@ const Header = ({ cart, addToCart, removeToCart }) => {
                 leaveTo="transform opacity-0 scale-95"
               >
                 <Menu.Items className="w-screen max-w-xs sm:max-w-md absolute right-0 mt-2 w-3xl origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="p-3">
+                  <div className="p-3 px-1">
                     <h3 className="text-xl font-semibold">Shopping cart</h3>
                     <Menu.Item>
-                      <div className="max-h-[60vh] overflow-y-auto hiddenScrollbar">
-                        <div className="divide-y divide-slate-100">
-                          {cart.length > 0 &&
-                            cart.map((item) => {
-                              const { id, title, imgSrc, price, qty } = item
-                              return (
-                                <div
-                                  key={id}
-                                  className="flex justify-between py-5 last:pb-0"
-                                >
-                                  <div className="relative h-20 w-20 items-center flex overflow-hidden rounded-xl bg-slate-100">
-                                    <Image
-                                      src={imgSrc}
-                                      alt="Rey Nylon Backpack"
-                                    />
-                                  </div>
-                                  <div className="ml-4 flex flex-1 flex-col">
-                                    <div>
-                                      <div className="flex justify-between ">
-                                        <div>
-                                          <h3 className="text-base font-medium ">
-                                            <a href="/ciseco/product-detail">
-                                              {title}
-                                            </a>
-                                          </h3>
-                                        </div>
-                                        <div className="mt-0.5">
-                                          <div className="flex items-center border-2 border-green-500 rounded-lg py-1 px-2 md:py-1.5 md:px-2.5 text-sm font-medium">
-                                            <span className="text-green-500 !leading-none">
-                                              $ {price * qty}
-                                            </span>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="flex flex-1 items-end justify-between text-sm">
-                                      <p className="text-gray-500 mr-2">
-                                        Qty {qty}
-                                      </p>
-                                      <div className="flex">
-                                        <button
-                                          type="button"
-                                          className="font-medium text-green-600 mr-5"
-                                          onClick={(e) => addCartHandler(e, id)}
-                                        >
-                                          Add more
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className="font-medium text-red-500"
-                                          onClick={(e) =>
-                                            removeCartHandler(e, id)
-                                          }
-                                        >
-                                          Remove
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              )
-                            })}
-                        </div>
-                      </div>
+                      <CartItems cartItems={cart} />
                     </Menu.Item>
                   </div>
                   <div className="py-3">
-                    <div class="bg-neutral-50 p-5 pb-0">
-                      <p class="flex justify-between font-semibold text-slate-900 ">
-                        <span>
-                          <span>Subtotal</span>
-                          <span class="block text-sm text-slate-500  font-normal">
-                            Shipping and taxes calculated at checkout.
-                          </span>
-                        </span>
-                        <span class="">$299.00</span>
-                      </p>
-                      <div class="text-right space-x-2 mt-5 pb-4">
-                        <a
-                          class="nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium py-2 px-4 sm:py-2 sm:px-6  ttnc-ButtonPrimary disabled:bg-opacity-90 bg-slate-900 hover:bg-slate-800 text-slate-50 shadow-xl flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 "
-                          rel="noopener noreferrer"
-                          href="/ciseco/checkout"
-                        >
-                          Check out
-                        </a>
-                      </div>
-                    </div>
+                    <CartSubTotal
+                      subTotal={subTotal}
+                      onPress={onPress}
+                      btnText="Check out"
+                    />
                   </div>
                 </Menu.Items>
               </Transition>
@@ -321,7 +271,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => dispatch({ type: ADD_TO_CART, payload: { id } }),
+    addToCart: (item) => dispatch({ type: ADD_TO_CART, payload: { item } }),
     removeToCart: (id) => dispatch({ type: REMOVE_FROM_CART, payload: { id } }),
   }
 }

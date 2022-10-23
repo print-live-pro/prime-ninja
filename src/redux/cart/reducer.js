@@ -1,5 +1,5 @@
-import { printer1Products } from "../../utils/consts"
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes"
+import { showToast } from "../../utils/common"
 
 const initialState = {
   cart: [],
@@ -13,6 +13,7 @@ const cartReducer = (state = initialState, action) => {
       const inCart = state.cart.find((product) =>
         product.id === item.id ? true : false
       )
+      showToast("Item added to cart successfully")
       return {
         ...state,
         cart: inCart
