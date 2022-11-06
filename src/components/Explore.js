@@ -6,7 +6,10 @@ import Cards from "../utils/Cards"
 import {
   printer1Products,
   printer2Products,
-  productTabs,
+  printer3Products,
+  printer4Products,
+  printer5Products,
+  productTabs
 } from "../utils/consts"
 
 export const CartContext = createContext()
@@ -18,11 +21,11 @@ const Explore = ({ addToCart }) => {
   const router = useRouter()
 
   const productsMap = {
-    printer1: printer1Products,
-    printer2: printer2Products,
-    printer3: printer1Products,
-    printer4: printer2Products,
-    printer5: printer1Products,
+    "Home Printer": printer1Products,
+    "Office Printer": printer2Products,
+    "Wireless Printer": printer3Products,
+    "Bussiness Printer": printer4Products,
+    "Laser Printer": printer5Products
   }
 
   const activeItemHandler = (title) => {

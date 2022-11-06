@@ -3,14 +3,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth"
 import { firebaseAPIKey } from "../src/utils/consts"
 
 const firebaseConfig = {
-  apiKey: firebaseAPIKey,
-  authDomain: "prime-ninja-auth.firebaseapp.com",
-  projectId: "prime-ninja-auth",
-  storageBucket: "prime-ninja-auth.appspot.com",
-  messagingSenderId: "678024346312",
-  appId: "1:678024346312:web:34c6e52776be7ad86ac3fd",
-  measurementId: "G-XF9424R3CQ",
-}
+  apiKey: "AIzaSyCasvCx4QWDvHgfH-DNp4kK1cTA3kIvEOI",
+  authDomain: "print-ninja.firebaseapp.com",
+  projectId: "print-ninja",
+  storageBucket: "print-ninja.appspot.com",
+  messagingSenderId: "953146006674",
+  appId: "1:953146006674:web:bf40b3b3797d90a694da4b"
+};
 
 const app = initializeApp(firebaseConfig)
 

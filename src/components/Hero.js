@@ -33,30 +33,30 @@ const Hero = () => {
           ></button>
         </div>
         <div className="carousel-inner relative w-full overflow-hidden">
-          <div className="carousel-item active relative float-left w-full h-[86vh]">
-            <Image src={CarouselImg1} className="w-full" alt="hp printer" />
+          <div className="carousel-item active relative float-left w-[100vw] h-[86vh]">
+            <Image src={CarouselImg1} className="w-[100vw] object-cover" alt="hp printer" />
             <div className="carousel-caption hidden md:block absolute text-center">
-              <h5 className="text-xl text-black font-bold">HP Printers</h5>
-              <p className="text-black">
-                Some representative placeholder content for the first slide.
+              <h5 className="text-xl text-white font-bold">Home Printer</h5>
+              <p className="text-white">
+                Print, Scan, and Copy Documents, files, project utilities. 
               </p>
             </div>
           </div>
           <div className="carousel-item relative float-left w-full h-[86vh]">
-            <Image src={CarouselImg2} className="w-full" alt="lg printer" />
+            <Image src={CarouselImg2} className="w-[100vw] object-cover" alt="lg printer" />
             <div className="carousel-caption hidden md:block absolute text-center">
-              <h5 className="text-xl text-black font-bold">LG Printers</h5>
-              <p className="text-black">
-                Some representative placeholder content for the second slide.
+              <h5 className="text-xl text-white font-bold">Office Printer</h5>
+              <p className="text-white">
+                  Copy, Scan, Fax documents to share with colleagues.
               </p>
             </div>
           </div>
           <div className="carousel-item relative float-left w-full h-[86vh]">
-            <Image src={CarouselImg3} className="w-full" alt="dell printer3" />
+            <Image src={CarouselImg3} className="w-[100vw] object-cover" alt="dell printer3" />
             <div className="carousel-caption hidden md:block absolute text-center">
-              <h5 className="text-xl text-black font-bold">Dell Printers</h5>
-              <p className="text-black">
-                Some representative placeholder content for the third slide.
+              <h5 className="text-xl text-white font-bold">Wireless Printer</h5>
+              <p className="text-white">
+                connect printer wireless and do stuff smoothly.
               </p>
             </div>
           </div>

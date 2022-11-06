@@ -4,23 +4,23 @@ export const firebaseAPIKey = "AIzaSyBqWeG5J_8reZgbaB7F1BIwhzahP9d7oh4"
 
 export const productTabs = [
   {
-    title: "printer1",
+    title: "Home Printer",
     url: "",
   },
   {
-    title: "printer2",
+    title: "Office Printer",
     url: "",
   },
   {
-    title: "printer3",
+    title: "Wireless Printer",
     url: "",
   },
   {
-    title: "printer4",
+    title: "Bussiness Printer",
     url: "",
   },
   {
-    title: "printer5",
+    title: "Laser Printer",
     url: "",
   },
 ]
@@ -71,6 +71,141 @@ export const printer1Products = [
 ]
 
 export const printer2Products = [
+  {
+    id: 1,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "28.50",
+  },
+  {
+    id: 2,
+    title: "printer2",
+    imgSrc: Printer1,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "40.50",
+  },
+  {
+    id: 3,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "18.00",
+  },
+  {
+    id: 4,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "45.00",
+  },
+  {
+    id: 5,
+    title: "printer2",
+    imgSrc: Printer1,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "58.00",
+  },
+  {
+    id: 6,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "100.00",
+  },
+]
+
+export const printer3Products = [
+  {
+    id: 1,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "28.50",
+  },
+  {
+    id: 2,
+    title: "printer2",
+    imgSrc: Printer1,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "40.50",
+  },
+  {
+    id: 3,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "18.00",
+  },
+  {
+    id: 4,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "45.00",
+  },
+  {
+    id: 5,
+    title: "printer2",
+    imgSrc: Printer1,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "58.00",
+  },
+  {
+    id: 6,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "100.00",
+  },
+]
+
+export const printer4Products = [
+  {
+    id: 1,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "28.50",
+  },
+  {
+    id: 2,
+    title: "printer2",
+    imgSrc: Printer1,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "40.50",
+  },
+  {
+    id: 3,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "18.00",
+  },
+  {
+    id: 4,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "45.00",
+  },
+  {
+    id: 5,
+    title: "printer2",
+    imgSrc: Printer1,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "58.00",
+  },
+  {
+    id: 6,
+    title: "printer2",
+    imgSrc: Printer2,
+    desc: "Some quick example text to build on the card title and make up the bulk of the card.",
+    price: "100.00",
+  },
+]
+
+export const printer5Products = [
   {
     id: 1,
     title: "printer2",

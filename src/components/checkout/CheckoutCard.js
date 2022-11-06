@@ -13,7 +13,7 @@ const CheckoutCard = ({ cart }) => {
   }
 
   const onPress = () => {
-    return ""
+    
   }
 
   return (
@@ -33,7 +33,7 @@ const CheckoutCard = ({ cart }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3">
               <div>
                 <label
-                  className="nc-Label text-base font-medium text-neutral-900 text-sm"
+                  className="nc-Label text-base font-medium text-neutral-900"
                   data-nc-id="Label"
                 >
                   First name
@@ -47,7 +47,7 @@ const CheckoutCard = ({ cart }) => {
               </div>
               <div>
                 <label
-                  className="nc-Label text-base font-medium text-neutral-900 text-sm"
+                  className="nc-Label text-base font-medium text-neutral-900"
                   data-nc-id="Label"
                 >
                   Last name
@@ -61,7 +61,7 @@ const CheckoutCard = ({ cart }) => {
               </div>
               <div class="flex-1">
                 <label
-                  class="nc-Label text-base font-medium text-neutral-900 text-sm"
+                  class="nc-Label text-base font-medium text-neutral-900"
                   data-nc-id="Label"
                 >
                   Address
@@ -75,7 +75,7 @@ const CheckoutCard = ({ cart }) => {
               </div>
               <div class="flex-1">
                 <label
-                  class="nc-Label text-base font-medium text-neutral-900 text-sm"
+                  class="nc-Label text-base font-medium text-neutral-900"
                   data-nc-id="Label"
                 >
                   Postal Code
@@ -89,7 +89,7 @@ const CheckoutCard = ({ cart }) => {
               </div>
               <div class="flex-1">
                 <label
-                  class="nc-Label text-base font-medium text-neutral-900 text-sm"
+                  class="nc-Label text-base font-medium text-neutral-900"
                   data-nc-id="Label"
                 >
                   City
@@ -103,7 +103,7 @@ const CheckoutCard = ({ cart }) => {
               </div>
               <div class="flex-1">
                 <label
-                  class="nc-Label text-base font-medium text-neutral-900 text-sm"
+                  class="nc-Label text-base font-medium text-neutral-900"
                   data-nc-id="Label"
                 >
                   Country
@@ -127,7 +127,7 @@ const CheckoutCard = ({ cart }) => {
           <div className="border border-slate-200 rounded-xl space-y-4 sm:space-y-6 block">
             <CartItems cartItems={cart} />
             <CartSubTotal
-              subTotal={0}
+              subTotal={10}
               onPress={onPress}
               btnText="Confirm order"
             />
