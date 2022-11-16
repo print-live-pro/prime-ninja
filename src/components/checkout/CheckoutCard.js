@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { RiArrowLeftSLine } from "react-icons/ri"
 import { connect } from "react-redux"
 import CartItems from "../../utils/CartItems"
@@ -7,6 +7,17 @@ import CartSubTotal from "../../utils/CartSubTotal"
 
 const CheckoutCard = ({ cart }) => {
   const router = useRouter()
+ const [subTotal,setSubtotal] = useState(0);
+
+  useEffect(()=>{
+    var value = 0;
+  cart.map((item,index)=>{
+    var price = (+item.price.split('$')[1]) * item.qty;
+    value = value + price;
+  })
+  setSubtotal(value);
+  },[cart])
+
 
   const routeToBack = () => {
     router.push("/home")
@@ -14,6 +25,16 @@ const CheckoutCard = ({ cart }) => {
 
   const onPress = () => {
     
+  }
+
+  const handleSubmit = () => {
+    var firstName = document.getElementById("first_name").value;
+    var lastName = document.getElementById("last_name").value;
+    var address = document.getElementById("address").value;
+    var post_code = document.getElementById("post_code").value;
+    var city = document.getElementById("city").value;
+    var country = document.getElementById("country").value;
+    console.log(firstName,lastName,address,post_code,city,country);
   }
 
   return (
@@ -41,7 +62,7 @@ const CheckoutCard = ({ cart }) => {
                 <input
                   type="text"
                   className="flex w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white disabled:bg-neutral-200 rounded-lg text-sm font-normal h-11 px-4 py-3 mt-1.5"
-                  value=""
+                  id='first_name'
                   placeholder="Cole"
                 />
               </div>
@@ -55,7 +76,7 @@ const CheckoutCard = ({ cart }) => {
                 <input
                   type="text"
                   className="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white disabled:bg-neutral-200 rounded-lg text-sm font-normal h-11 px-4 py-3 mt-1.5"
-                  value=""
+                  id="last_name"
                   placeholder="Enrico"
                 />
               </div>
@@ -70,7 +91,7 @@ const CheckoutCard = ({ cart }) => {
                   type="text"
                   class="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white disabled:bg-neutral-200 rounded-lg text-sm font-normal h-11 px-4 py-3 mt-1.5"
                   placeholder="123, Dream Avenue, USA"
-                  value=""
+                  id="address"
                 />
               </div>
               <div class="flex-1">
@@ -84,7 +105,7 @@ const CheckoutCard = ({ cart }) => {
                   type="number"
                   class="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white disabled:bg-neutral-200 rounded-lg text-sm font-normal h-11 px-4 py-3 mt-1.5"
                   placeholder="2500"
-                  value=""
+                  id="post_code"
                 />
               </div>
               <div class="flex-1">
@@ -98,7 +119,7 @@ const CheckoutCard = ({ cart }) => {
                   type="text"
                   class="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white disabled:bg-neutral-200 rounded-lg text-sm font-normal h-11 px-4 py-3 mt-1.5"
                   placeholder="Texas"
-                  value=""
+                  id="city"
                 />
               </div>
               <div class="flex-1">
@@ -109,14 +130,14 @@ const CheckoutCard = ({ cart }) => {
                   Country
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   class="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white disabled:bg-neutral-200 rounded-lg text-sm font-normal h-11 px-4 py-3 mt-1.5"
                   placeholder="USA"
-                  value=""
+                  id="country"
                 />
               </div>
             </div>
-            <button className="nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium py-3 px-4 sm:py-3.5 sm:px-6  ttnc-ButtonPrimary disabled:bg-opacity-90 bg-slate-900  hover:bg-slate-800 text-slate-50  shadow-xl sm:!px-7 shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000">
+            <button onClick={handleSubmit} className="nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium py-3 px-4 sm:py-3.5 sm:px-6  ttnc-ButtonPrimary disabled:bg-opacity-90 bg-slate-900  hover:bg-slate-800 text-slate-50  shadow-xl sm:!px-7 shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000">
               Save and next to Payment
             </button>
           </div>
@@ -127,7 +148,7 @@ const CheckoutCard = ({ cart }) => {
           <div className="border border-slate-200 rounded-xl space-y-4 sm:space-y-6 block">
             <CartItems cartItems={cart} />
             <CartSubTotal
-              subTotal={10}
+              subTotal={subTotal}
               onPress={onPress}
               btnText="Confirm order"
             />

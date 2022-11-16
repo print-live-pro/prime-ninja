@@ -25,7 +25,7 @@ import CartSubTotal from "../utils/CartSubTotal"
 const Header = ({ cart, addToCart, removeToCart }) => {
   const router = useRouter()
 
-  const [subTotal, setSubTotal] = useState(null)
+  const [subTotal, setSubTotal] = useState(0)
   const [user, setUser] = useState(null)
   const [openLogin, setOpenLogin] = useState(false)
   const [openRegister, setOpenRegister] = useState(false)
@@ -61,7 +61,7 @@ const Header = ({ cart, addToCart, removeToCart }) => {
     if (cartCount !== 0) {
       cart.forEach((item) => {
         const { price, qty } = item
-        total += price * qty
+        total += +price.split("$")[1] * qty
       })
       setSubTotal(total)
     }
@@ -101,7 +101,7 @@ const Header = ({ cart, addToCart, removeToCart }) => {
   return (
     <>
       <div className="flex justify-between p-5 items-center">
-        <Image src={Logo} alt="company-logo" className="w-3 h-3" />
+        <Image src={Logo} alt="company-logo" width="140px" height="80px" className="!w-[80px] !h-[48px]"/>
         <div className="flex">
           {user !== null ? (
             <div className="top-16 w-56 text-right z-50">
