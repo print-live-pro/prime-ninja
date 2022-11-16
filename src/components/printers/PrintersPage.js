@@ -27,7 +27,7 @@ const PrintersPage = ({ addToCart }) => {
         <button onClick={routeToBack}>
           <RiArrowLeftSLine size={30} />
         </button>
-        <h1 className="text-2xl font-semibold ml-2">HP Printers</h1>
+        <h1 className="text-2xl font-semibold ml-2">Printers</h1>
       </div>
       <div className="mx-4 grid gap-6 grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 lg:grid-cols-3">
         {productList.map((item) => {
