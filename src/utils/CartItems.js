@@ -33,7 +33,7 @@ const CartItems = ({ cartItems }) => {
                   <div className="flex flex-1 items-end justify-between text-sm">
                     <p className="text-gray-500 mr-2">Qty {qty}</p>
                     <div className="flex">
-                      <button
+                      {/* <button
                         type="button"
                         className="font-medium text-green-600 mr-5"
                         onClick={(e) => addCartHandler(e, item)}
@@ -46,7 +46,7 @@ const CartItems = ({ cartItems }) => {
                         onClick={(e) => removeCartHandler(e, id)}
                       >
                         Remove
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
