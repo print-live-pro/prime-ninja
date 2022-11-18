@@ -101,7 +101,7 @@ const Header = ({ cart, addToCart, removeToCart }) => {
   return (
     <>
       <div className="flex justify-between p-5 items-center">
-        <Image src={Logo} alt="company-logo" width="140px" height="80px" className="!w-[80px] !h-[48px]"/>
+        <Image src={Logo} alt="company-logo" width="90px" height="80px" className="!w-[50px] !h-[48px]"/>
         <div className="flex">
           {user !== null ? (
             <div className="top-16 w-56 text-right z-50">
