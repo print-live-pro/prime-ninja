@@ -6,8 +6,8 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>Prime Ninja</title>
-        <meta property="og:title" content="Prime Ninja" key="title" />
+        <title>Print Live Pro</title>
+        <meta property="og:title" content="Print Live Pro" key="title" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script
           async

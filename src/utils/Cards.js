@@ -5,10 +5,10 @@ const Cards = ({ title, imgSrc, desc, price, addToCartHandler }) => {
   return (
     <>
       <div className="flex justify-center">
-        <div className="max-w-sm">
+        <div className="max-w-sm border border-gray-400 rounded-xl">
           <div className="bg-slate-50 rounded-3xl">
             <img
-              className="object-cover w-full h-full drop-shadow-xl"
+              className="object-cover w-full h-full drop-shadow-xl rounded-xl"
               src={imgSrc.src}
               alt=""
             />

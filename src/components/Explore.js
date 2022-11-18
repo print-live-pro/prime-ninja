@@ -44,7 +44,7 @@ const Explore = ({ addToCart }) => {
   }
 
   return (
-    <div className="py-10 bg-white">
+    <div className="py-10 bg-[#C7DBE6]">
       <h1 className="text-4xl font-bold text-center">Start exploring.</h1>
       <div className="nc-Nav mb-12 mt-6 lg:mb-14 relative flex justify-center w-full text-sm md:text-base">
         <ul className="flex p-1 m-4 bg-slate-50 rounded-full shadow-lg overflow-x-auto hiddenScrollbar">
