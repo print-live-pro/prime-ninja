@@ -21,6 +21,7 @@ import { showToast } from "../utils/common"
 import { useRouter } from "next/router"
 import CartItems from "../utils/CartItems"
 import CartSubTotal from "../utils/CartSubTotal"
+import Link from "next/link"
 
 const Header = ({ cart, addToCart, removeToCart }) => {
   const router = useRouter()
@@ -101,7 +102,10 @@ const Header = ({ cart, addToCart, removeToCart }) => {
   return (
     <>
       <div className="flex justify-between p-5 items-center">
-        <Image src={Logo} alt="company-logo" width="90px" height="80px" className="!w-[50px] !h-[48px]"/>
+        <Link href='/' className="cursor-pointer">
+        <Image src={Logo} alt="company-logo" width="90px" height="80px" className="cursor-pointer"/>
+        
+        </Link>
         <div className="flex">
           {user !== null ? (
             <div className="top-16 w-56 text-right z-50">

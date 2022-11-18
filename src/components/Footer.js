@@ -36,9 +36,9 @@ const Footer = () => {
     <footer className="p-4 bg-[#C7DBE6] sm:p-6 dark:bg-gray-900 border-t-2">
     <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
-            <Image src={Logo} alt="company-logo" width="80px" height="80px" className="w-3 h-3" />
-            </a>
+            <Link href="/" className="flex items-center">
+            <Image src={Logo} alt="company-logo" width="80px" height="80px" className="cursor-pointer" />
+            </Link>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
