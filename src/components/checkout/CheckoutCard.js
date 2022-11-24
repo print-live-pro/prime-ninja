@@ -49,9 +49,9 @@ const CheckoutCard = ({ cart }) => {
           firstName.value = "";
           lastName.value = "";
           address.value = "";
-          post_code = "";
-          city = "";
-          country = "";
+          post_code.value = "";
+          city.value = "";
+          country.value = "";
           setSucess(true);
         },
         (error) => {
