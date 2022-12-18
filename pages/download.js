@@ -107,29 +107,29 @@ const Download = () => {
         <div class="font-bold text-lg pb-4">Contact Info</div>
         <ul>
           <li class="pt-2">
-            <label class="font-semibold">PHONE:</label><span class="text-slate-500 hover:text-white">
-              Toll free +1-844-801-5770 </span>
+            {/* <label class="font-semibold">PHONE:</label><span class="text-slate-500 hover:text-white">
+              Toll free +1-844-801-5770 </span> */}
             </li>
           <li class="pt-2"><label class="font-semibold">EMAIL:</label><span
-              class="text-slate-500 hover:text-white"> support@smartapplianceonline.com</span></li>
+              class="text-slate-500 hover:text-white"> support@printlivepro.com</span></li>
           <li class="pt-2"><label class="font-semibold">ADDRESS:</label> <span
-              class="text-slate-500 hover:text-white">107 N 11th St, Tampa, FL 33602</span> </li>
+              class="text-slate-500 hover:text-white">297 K 15th St, Jock, FL 33704</span> </li>
         </ul>
       </section>
       <section>
         <div class="font-bold text-lg pb-4">My Account</div>
         <ul>
           <li class="text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/privacy-policy/">    Privacy Policy</a>
+            <a href="https://www.printlivepro.com/privacy-policy">    Privacy Policy</a>
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/refund-policy/">    Refund and Return Policy </a>
+            <a href="https://www.printlivepro.com/terms-condition">    Refund and Return Policy </a>
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/terms-and-conditions/">    Terms and Condition</a>
+            <a href="https://www.printlivepro.com/terms-condition">    Terms and Condition</a>
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/disclaimer-2/">    Disclaimer</a>
+            <a href="https://www.printlivepro.com/disclaimer">    Disclaimer</a>
         </li>
         </ul>
       </section>
@@ -137,19 +137,19 @@ const Download = () => {
         <div class="font-bold text-lg pb-4">Quick Links</div>
         <ul>
           <li class="text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/printconnect/">    Home</a>
+            <a href="https://www.printlivepro.com/">    Home</a>
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/blog/">    Blog</a>
+            {/* <a href="https://smartapplianceonline.com/blog/">    Blog</a> */}
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/about/">    About Us</a>
+            <a href="https://www.printlivepro.com/about-us">    About Us</a>
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/printconnect/contact.html">    Contact Us</a>
+            <a href="https://www.printlivepro.com/contact">    Contact Us</a>
         </li>
           <li class="pt-2 text-slate-500 hover:text-white">
-            <a href="https://smartapplianceonline.com/printconnect/">    Shop</a>
+            <a href="https://www.printlivepro.com/">    Shop</a>
         </li>
         </ul>
       </section>
