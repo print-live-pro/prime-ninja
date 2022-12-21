@@ -163,15 +163,18 @@ const Hero = () => {
     <hr class="mt-12 mb-8" />
     <section>
       <div class="flex items-cente">
-        <a href="download.html" class="p-8 border-r-2 flex-1">
+        <Link href="/contact-us">
+          <div className="p-8 border-r-2 flex-1">
           <figure class="flex flex-col items-center">
             <img src="./download.png" class="icon" alt="Download Icon" />
             <figcaption class="mt-2 font-thin tracking-wider">
               Download Drivers
             </figcaption>
           </figure>
-        </a>
-        <a href="contact.html" class="p-8 border-r-2 flex-1">
+          </div>
+        </Link>
+        <Link href="/contact-us">
+          <div className="p-8 border-r-2 flex-1">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
               viewBox="0 0 256 256">
@@ -187,9 +190,11 @@ const Hero = () => {
               Check Warranty Status
             </figcaption>
           </figure>
-        </a>
+          </div>
+        </Link>
         {/* <!-- <button onclick="zChat.sendChatMsg('hello', function(err) { console.log(err) });">Chat Open</button> --> */}
-        <a href="contact.html" class="p-8 border-r-2 flex-1">
+        <Link href="/contact-us">
+          <div className="p-8 border-r-2 flex-1">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
               viewBox="0 0 256 256">
@@ -206,8 +211,10 @@ const Hero = () => {
               Contact Us
             </figcaption>
           </figure>
-        </a>
-        <a href="javascript:$zopim.livechat.window.show();" class="p-8 flex-1">
+          </div>
+        </Link>
+        <Link href="/" class="p-8 flex-1">
+          <div className="p-8 flex-1">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
               viewBox="0 0 256 256">
@@ -229,7 +236,8 @@ const Hero = () => {
               Ask Our Virtual Agent
             </figcaption>
           </figure>
-        </a>
+          </div>
+        </Link>
       </div>
     </section>
     <hr class="mt-4 mb-8" />
@@ -242,9 +250,11 @@ const Hero = () => {
           <p class="text-lg">Try these troubleshooting steps to fix the scan and/or print issues.</p>
         </div>
         <div>
-          <a href="contact.html" class="!inline-block bg-blue-600 text-white px-4 py-2 rounded">
+          <Link href="/contact-us">
+            <div className="!inline-block bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Fix Scan/Print
-          </a>
+            </div>
+          </Link>
         </div>
       </div>
       <div class="flex-1 flex flex-col p-2 items-center justify-between">
@@ -265,9 +275,11 @@ const Hero = () => {
             page.</p>
         </div>
         <div>
-          <a href="contact.html" class="!inline-block bg-blue-600 text-white px-4 py-2 rounded">
+          <Link href="/contact-us">
+            <div className="!inline-block bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Get Support
-          </a>
+            </div>
+          </Link>
         </div>
       </div>
       <div class="flex-1 flex flex-col p-2 items-center justify-between">
@@ -278,9 +290,11 @@ const Hero = () => {
             queue.</p>
         </div>
         <div>
-          <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded">
+          <Link href="/contact-us">
+            <div className="bg-blue-600 text-white px-4 py-2 rounded">
             Print and Scan Doctor
-          </a>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
