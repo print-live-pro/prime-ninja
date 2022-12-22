@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
            {/* <div class="gradient-1 w-[100%] h-[100px] flex-0.5"></div>
                     <div class="gradient-1 w-[100%] flex-0.5 h-[100px]"></div>  */}
-          <div class="p-16 absolute border-2 border-black bg-white w-[90%] top-[50%] right-0 rounded-lg">
+          <div class="p-8 absolute border-2 border-black bg-white w-[90%] top-[50%] right-0 rounded-lg">
             <div class="flex gap-4">
               <svg class="!opacity-50 border-2 border-black w-[50px] h-[50px] p-1 rounded-full"
                 xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
@@ -133,7 +133,9 @@ const Hero = () => {
                 about HP+ and get help with printer setup.</li>
             </ul>
             <div class="text-blue-600 underline">Visit the FAQ page for help, troubleshooting, and additional information
-              </div>
+            <div className="h-2"/>
+            <a href="javascript:$zopim.livechat.window.show();" className="bg-blue-600 p-2 text-white mt-2 rounded no-underline">CLICK HERE FOR PRINTER SETUP</a>
+            </div>
           </div>
         </div>
         <div class="relative bg-blue-600">
@@ -213,7 +215,7 @@ const Hero = () => {
           </figure>
           </div>
         </Link>
-        <Link href="/" class="p-8 flex-1">
+        <Link href="javascript:$zopim.livechat.window.show();" class="p-8 flex-1">
           <div className="p-8 flex-1">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
