@@ -5,9 +5,12 @@ import Slide3 from "../public/Slide 16_9 - 3.png";
 import Logo from "../public/logo_copy.svg";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 const ContactUs = () => {
     const handlesubmit = (event) => {
+      event.preventDefault();
+      console.log('hh')
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const phone_number = document.getElementById("number").value;
@@ -18,9 +21,13 @@ const ContactUs = () => {
             Phone Number: ${phone_number},
             Product Name: ${product_name},
             Issues: ${issues}`;
-        navigator.clipboard.writeText(messageChat);
+            console.log(messageChat);
+            zE('webWidget', 'chat:send', messageChat);
+        // navigator.clipboard.writeText(messageChat);
       };
   return (
+    <>
+        <Script  id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=72553e6c-8911-4ffc-afb4-92cedfafb6a0" />
     <div>
         <header
       className="max-w-screen-xl mx-auto my-4 flex items-center gap-8 border-grey"
@@ -45,7 +52,7 @@ const ContactUs = () => {
       </header>
     </main>
       <section className="max-w-screen-xl mx-auto flex justify-between py-12 gap-8">
-        <form className="flex-1" action="#" onsubmit="handlesubmit();return false">
+        <form className="flex-1">
           <div className="flex flex-col gap-4">
             <div className="flex gap-4 items-center">
               <label className="flex-[0.3]">Name:</label>
@@ -92,15 +99,14 @@ const ContactUs = () => {
               ></textarea>
             </div>
             <div className="text-center">
-              <a
-                href=""
+              <button
                 className="float-right"
-                onclick={handlesubmit}
+                onClick={handlesubmit}
               >
                 <div className="bg-blue-600 w-48 !py-2 rounded-lg text-white text-lg">
                   Submit
                 </div>
-              </a>
+              </button>
             </div>
           </div>
         </form>
@@ -244,6 +250,7 @@ const ContactUs = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
