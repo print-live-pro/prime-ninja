@@ -3,9 +3,9 @@ import { Tooltip } from 'react-tooltip'
 import "react-tooltip/dist/react-tooltip.css";
 
 const DownloadError = () => {
+
     useEffect(()=>{
         setTimeout(function () {
-
             var loader = document.querySelector('#svgLoaderCircle'),
               percentagetext = document.querySelector('#svgPercentageText'),
               copyFiles = document.querySelector('.copyFiles'),
@@ -69,12 +69,12 @@ const DownloadError = () => {
                 percentage = 0;
               }
 
-            }, 15);
+            }, 400);
 
           }, 1000);
     },[])
   return (
-    <>
+    <div id="full-screen">
     <section class="h-[100vh] install flex flex-col error-show">
     <h1 className='text-white'>Installing Driver</h1>
     <h2>Your printer would be ready after installing.
@@ -113,13 +113,14 @@ const DownloadError = () => {
           <span class="text-[16px] font-medium">Fatal Error occurred during installation.</span>
         </div>
 
-        <div class="absolute top-[20%] left-[50%]"  style={{transform:"translateX(-50%)"}}>
+        <div className="text-center absolute top-[20%] left-[50%]"  style={{transform:"translateX(-50%)", minWidth:"1200px",}}>
           <div class="flex justify-center items-center">
             <img src="./print_clipart.png" class="w-[150px]"/>
 
           </div>
-          <h1 class="text-black text-lg mt-4">Printer Dirver installation has been failed due to fatal error <a class="text-blue underline cursor-pointer" id="my-element">"C0000022"</a></h1>
-          <h1 class="text-black mt-[80px] mb-[20px] text-4xl text-center">Please Contact HP Customer Support or Chat with Us.</h1>
+          <h1 class="text-black text-lg mt-4">Printer Driver installation has been failed due to fatal error <a class="text-blue underline cursor-pointer" id="my-element">"C0000022"</a> preventing product dirver installation.</h1>
+          <h1 className="text-black mt-[80px] mb-[20px] text-2xl text-center">Please Contact HP Customer Support or Chat with Us.</h1>
+          <h1 className="text-black text-2xl text-center">Tool Free(USA/CA): <a href="tel:+1-844-557-0415" className='underline text-blue-500'>+1-844-557-0415</a></h1>
           <div class="text-black text-[14px] text-center">
             <a class="bg-blue text-white px-8 py-2 rounded-lg" href="javascript:$zopim.livechat.window.show();">Please Connect</a>
           </div>
@@ -136,7 +137,7 @@ const DownloadError = () => {
   <Tooltip anchorId="my-element"
         variant="info"
         content="C0000022 error may be triggered by an untrustworthy third party application, malware or virus, which injected mailicious codes into the OS and corrupted boot configuration data." />
-  </>
+  </div>
   )
 }
 

@@ -3,7 +3,12 @@ import React from 'react'
 
 const ErrorProduct = () => {
 React.useEffect(() => {
+  document.body.style.background = "#C7DBE6";
 }, [])
+
+const handleFullScreen = () => {
+  document.body.requestFullscreen();
+}
 
   return (
     <div className=''>
@@ -35,12 +40,13 @@ React.useEffect(() => {
         </div>
       </div>
       <div class="flex gap-10">
-        <button class="revert border border-white px-4 py-1 rounded">Reinstall
+        <button class="revert border-2 border-black px-4 py-1 rounded">Reinstall
           Drivers</button>
         <Link
         href="/download-error"
+        onClick={handleFullScreen}
           >
-            <div class="get-started border-2 text-white border-black px-8 py-2 rounded bg-black">Download</div>
+            <div className="get-started border-2 text-white border-black px-8 py-2 rounded bg-black cursor-pointer">Download</div>
           </Link>
       </div>
     </section>

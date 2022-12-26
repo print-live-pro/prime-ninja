@@ -2,7 +2,10 @@ import React from "react";
 import Head from "next/head"
 import Home from "../src/components/Home"
 
-const index = () => {
+const HomePage = () => {
+  React.useEffect(() => {
+    document.body.style.background = "#C7DBE6";
+  }, [])
   return (
     <>
       <Head>
@@ -19,4 +22,4 @@ const index = () => {
   )
 };
 
-export default index;
+export default HomePage;

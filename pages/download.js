@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Download = () => {
     useEffect(()=>{
-        document.body.style.background = 'white'
+        document.body.style.background = '#C7DBE6'
         return () => {
             document.body.style.background = 'transparent'
         }
@@ -49,7 +49,7 @@ const Download = () => {
         <div class="flex gap-8 py-10">
           <input type="text" className="flex-1 rounded border-black border opacity-50" placeholder="Example:Office Jet 8790" />
           <Link href="/error-product">
-            <div className="bg-black text-white px-4 py-2 rounded">
+            <div className="bg-black text-white px-4 py-2 rounded cursor-pointer">
                 Submit</div></Link>
         </div>
         <button type="button"

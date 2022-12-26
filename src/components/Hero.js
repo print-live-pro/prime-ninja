@@ -132,9 +132,8 @@ const Hero = () => {
               <li><span class="text-2xl">&#x2022;</span> Our priority is to take care of you. Call to resolve questions
                 about HP+ and get help with printer setup.</li>
             </ul>
-            <div class="text-blue-600 underline">Visit the FAQ page for help, troubleshooting, and additional information
-            <div className="h-2"/>
-            <a href="javascript:$zopim.livechat.window.show();" className="bg-blue-600 p-2 text-white mt-2 rounded no-underline">CLICK HERE FOR PRINTER SETUP</a>
+            <div class="text-blue-600 text-center">
+            <Link href="/download"><div className="w-[400px] mx-auto bg-blue-600 p-2 px-10 shadow text-white mt-2 rounded no-underline cursor-pointer">CLICK HERE FOR PRINTER SETUP</div></Link>
             </div>
           </div>
         </div>
@@ -157,18 +156,18 @@ const Hero = () => {
           </p>
           <div class="mt-4">
             <Link href="/download">
-              <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded">Printer Setup</div></Link>
+              <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">Printer Setup</div></Link>
           </div>
         </div>
       </div>
     </section>
     <hr class="mt-12 mb-8" />
     <section>
-      <div class="flex items-cente">
+      <div class="flex items-cente mb-4">
         <Link href="/contact-us">
-          <div className="p-8 border-r-2 flex-1">
+          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
           <figure class="flex flex-col items-center">
-            <img src="./download.png" class="icon" alt="Download Icon" />
+            <img src="./download.png" class="icon" alt="Download Icon"/>
             <figcaption class="mt-2 font-thin tracking-wider">
               Download Drivers
             </figcaption>
@@ -176,7 +175,7 @@ const Hero = () => {
           </div>
         </Link>
         <Link href="/contact-us">
-          <div className="p-8 border-r-2 flex-1">
+          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
               viewBox="0 0 256 256">
@@ -196,7 +195,7 @@ const Hero = () => {
         </Link>
         {/* <!-- <button onclick="zChat.sendChatMsg('hello', function(err) { console.log(err) });">Chat Open</button> --> */}
         <Link href="/contact-us">
-          <div className="p-8 border-r-2 flex-1">
+          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
               viewBox="0 0 256 256">
@@ -216,7 +215,7 @@ const Hero = () => {
           </div>
         </Link>
         <Link href="javascript:$zopim.livechat.window.show();" class="p-8 flex-1">
-          <div className="p-8 flex-1">
+          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
           <figure class="flex flex-col items-center">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
               viewBox="0 0 256 256">
@@ -293,7 +292,7 @@ const Hero = () => {
         </div>
         <div>
           <Link href="/contact-us">
-            <div className="bg-blue-600 text-white px-4 py-2 rounded">
+            <div className="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Print and Scan Doctor
             </div>
           </Link>
