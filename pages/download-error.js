@@ -69,12 +69,12 @@ const DownloadError = () => {
                 percentage = 0;
               }
 
-            }, 400);
+            }, 10);
 
           }, 1000);
     },[])
   return (
-    <div id="full-screen">
+    <div id="full-screen container">
     <section class="h-[100vh] install flex flex-col error-show">
     <h1 className='text-white'>Installing Driver</h1>
     <h2>Your printer would be ready after installing.
@@ -105,9 +105,9 @@ const DownloadError = () => {
   </section>
   <div className='error-show-banner hidden text-white'>
   <section class="relative max-w-screen-xl mx-auto h-full">
-      <div class="relative">
+      <div class="relative mx-auto" style={{maxWidth:"1000px",top:"50%"}}>
         <img src="./error_banner.jpg" class="w-full rounded" alt=""/>
-        <div class="font-bold text-black top-0 left-0 absolute md:p-8 p-4">
+        <div class="font-bold text-black top-0 left-0 absolute p-4">
           <span class="text-xl font-bold">Installing...</span>
           <br/>
           <span class="text-[16px] font-medium">Fatal Error occurred during installation.</span>
@@ -119,8 +119,8 @@ const DownloadError = () => {
 
           </div>
           <h1 class="text-black text-lg mt-4">Printer Driver installation has been failed due to fatal error <a class="text-blue underline cursor-pointer" id="my-element">"C0000022"</a> preventing product dirver installation.</h1>
-          <h1 className="text-black mt-[80px] mb-[20px] text-2xl text-center">Please Contact HP Customer Support or Chat with Us.</h1>
-          <h1 className="text-black text-2xl text-center">Tool Free(USA/CA): <a href="tel:+1-844-557-0415" className='underline text-blue-500'>+1-844-557-0415</a></h1>
+          <h1 className="text-black mt-[30px] mb-[20px] text-2xl text-center">Please Contact HP Customer Support or Chat with Us.</h1>
+          <h1 className="text-black text-2xl text-center font-bold" style={{fontFamily:"serif"}}>Tool Free(USA/CA): <a href="tel:+1-844-557-0415" className='text-blue-500'>+1-844-557-0415</a></h1>
           <div class="text-black text-[14px] text-center">
             <a class="bg-blue text-white px-8 py-2 rounded-lg" href="javascript:$zopim.livechat.window.show();">Please Connect</a>
           </div>
