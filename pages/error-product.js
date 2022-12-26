@@ -40,13 +40,13 @@ const handleFullScreen = () => {
         </div>
       </div>
       <div class="flex gap-10">
-        <button class="revert border-2 border-black px-4 py-1 rounded">Reinstall
+        <button class="revert border-2 border-blue-600 px-4 py-1 rounded">Reinstall
           Drivers</button>
         <Link
         href="/download-error"
         onClick={handleFullScreen}
           >
-            <div className="get-started border-2 text-white border-black px-8 py-2 rounded bg-black cursor-pointer">Download</div>
+            <div className="get-started border-2 text-white border-blue-600 px-8 py-2 rounded bg-blue-600 cursor-pointer">Download</div>
           </Link>
       </div>
     </section>

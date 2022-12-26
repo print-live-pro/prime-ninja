@@ -69,7 +69,7 @@ const DownloadError = () => {
                 percentage = 0;
               }
 
-            }, 10);
+            }, 400);
 
           }, 1000);
     },[])
