@@ -132,6 +132,9 @@ const Hero = () => {
               <li><span class="text-2xl">&#x2022;</span> Our priority is to take care of you. Call to resolve questions
                 about HP+ and get help with printer setup.</li>
             </ul>
+            <div>
+                  <h2 className='text-3xl font-bold text-center mt-3 mb-5'>Toll Free (USA/CA): +1-844-557-0415</h2>
+            </div>
             <div class="text-blue-600 text-center">
             <Link href="/download"><div className="w-[400px] mx-auto bg-blue-600 p-2 px-10 shadow text-white mt-2 rounded no-underline cursor-pointer">CLICK HERE FOR PRINTER SETUP</div></Link>
             </div>
