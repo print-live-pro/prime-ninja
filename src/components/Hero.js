@@ -164,85 +164,85 @@ const Hero = () => {
       </div>
     </section>
     <hr class="mt-12 mb-8" />
-    <section>
-      <div class="flex items-cente mb-4">
-        <Link href="/contact-us">
-          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
-          <figure class="flex flex-col items-center">
-            <img src="./download.png" class="icon" alt="Download Icon"/>
-            <figcaption class="mt-2 font-thin tracking-wider">
-              Download Drivers
-            </figcaption>
-          </figure>
-          </div>
-        </Link>
-        <Link href="/contact-us">
-          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
-          <figure class="flex flex-col items-center">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
-              viewBox="0 0 256 256">
-              <rect width="256" height="256" fill="none"></rect>
-              <circle cx="128" cy="128" r="88" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="16">
-              </circle>
-              <line x1="128" y1="128" x2="167.6" y2="88.4" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></line>
-              <line x1="104" y1="8" x2="152" y2="8" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></line>
-            </svg>
-            <figcaption class="mt-2 font-thin tracking-wider">
-              Check Warranty Status
-            </figcaption>
-          </figure>
-          </div>
-        </Link>
-        {/* <!-- <button onclick="zChat.sendChatMsg('hello', function(err) { console.log(err) });">Chat Open</button> --> */}
-        <Link href="/contact-us">
-          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
-          <figure class="flex flex-col items-center">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
-              viewBox="0 0 256 256">
-              <rect width="256" height="256" fill="none"></rect>
-              <path d="M159.4,40A80.1,80.1,0,0,1,216,96.6" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-              <path d="M151.1,70.9a47.9,47.9,0,0,1,34,34" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-              <path
-                d="M92.5,124.8a83.6,83.6,0,0,0,39,38.9,8,8,0,0,0,7.9-.6l25-16.7a7.9,7.9,0,0,1,7.6-.7l46.8,20.1a7.9,7.9,0,0,1,4.8,8.3A48,48,0,0,1,176,216,136,136,0,0,1,40,80,48,48,0,0,1,81.9,32.4a7.9,7.9,0,0,1,8.3,4.8l20.1,46.9a8,8,0,0,1-.6,7.5L93,117A8,8,0,0,0,92.5,124.8Z"
-                fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
-            </svg>
-            <figcaption class="mt-2 font-thin tracking-wider">
-              Contact Us
-            </figcaption>
-          </figure>
-          </div>
-        </Link>
-        <Link href="javascript:$zopim.livechat.window.show();" class="p-8 flex-1">
-          <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
-          <figure class="flex flex-col items-center">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
-              viewBox="0 0 256 256">
-              <rect width="256" height="256" fill="none"></rect>
-              <circle cx="128" cy="140" r="40" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></circle>
-              <path d="M196,116a59.8,59.8,0,0,1,48,24" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-              <path d="M12,140a59.8,59.8,0,0,1,48-24" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-              <path d="M70.4,216a64.1,64.1,0,0,1,115.2,0" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-              <path d="M60,116A32,32,0,1,1,91.4,78" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-              <path d="M164.6,78A32,32,0,1,1,196,116" fill="none" stroke="#000000" stroke-linecap="round"
-                stroke-linejoin="round" stroke-width="16"></path>
-            </svg>
-            <figcaption class="mt-2 font-thin tracking-wider">
-              Ask Our Virtual Agent
-            </figcaption>
-          </figure>
-          </div>
-        </Link>
-      </div>
-    </section>
+//     <section>
+//       <div class="flex items-cente mb-4">
+//         <Link href="/contact-us">
+//           <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
+//           <figure class="flex flex-col items-center">
+//             <img src="./download.png" class="icon" alt="Download Icon"/>
+//             <figcaption class="mt-2 font-thin tracking-wider">
+//               Download Drivers
+//             </figcaption>
+//           </figure>
+//           </div>
+//         </Link>
+//         <Link href="/contact-us">
+//           <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
+//           <figure class="flex flex-col items-center">
+//             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
+//               viewBox="0 0 256 256">
+//               <rect width="256" height="256" fill="none"></rect>
+//               <circle cx="128" cy="128" r="88" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="16">
+//               </circle>
+//               <line x1="128" y1="128" x2="167.6" y2="88.4" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></line>
+//               <line x1="104" y1="8" x2="152" y2="8" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></line>
+//             </svg>
+//             <figcaption class="mt-2 font-thin tracking-wider">
+//               Check Warranty Status
+//             </figcaption>
+//           </figure>
+//           </div>
+//         </Link>
+//         {/* <!-- <button onclick="zChat.sendChatMsg('hello', function(err) { console.log(err) });">Chat Open</button> --> */}
+//         <Link href="/contact-us">
+//           <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
+//           <figure class="flex flex-col items-center">
+//             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
+//               viewBox="0 0 256 256">
+//               <rect width="256" height="256" fill="none"></rect>
+//               <path d="M159.4,40A80.1,80.1,0,0,1,216,96.6" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//               <path d="M151.1,70.9a47.9,47.9,0,0,1,34,34" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//               <path
+//                 d="M92.5,124.8a83.6,83.6,0,0,0,39,38.9,8,8,0,0,0,7.9-.6l25-16.7a7.9,7.9,0,0,1,7.6-.7l46.8,20.1a7.9,7.9,0,0,1,4.8,8.3A48,48,0,0,1,176,216,136,136,0,0,1,40,80,48,48,0,0,1,81.9,32.4a7.9,7.9,0,0,1,8.3,4.8l20.1,46.9a8,8,0,0,1-.6,7.5L93,117A8,8,0,0,0,92.5,124.8Z"
+//                 fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+//             </svg>
+//             <figcaption class="mt-2 font-thin tracking-wider">
+//               Contact Us
+//             </figcaption>
+//           </figure>
+//           </div>
+//         </Link>
+//         <Link href="javascript:$zopim.livechat.window.show();" class="p-8 flex-1">
+//           <div className="p-8 border-r-2 box-border border-2 border-l-transparent border-t-transparent border-b-transparent flex-1 cursor-pointer hover:border-2 hover:border-black hover:rounded-lg">
+//           <figure class="flex flex-col items-center">
+//             <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000"
+//               viewBox="0 0 256 256">
+//               <rect width="256" height="256" fill="none"></rect>
+//               <circle cx="128" cy="140" r="40" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></circle>
+//               <path d="M196,116a59.8,59.8,0,0,1,48,24" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//               <path d="M12,140a59.8,59.8,0,0,1,48-24" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//               <path d="M70.4,216a64.1,64.1,0,0,1,115.2,0" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//               <path d="M60,116A32,32,0,1,1,91.4,78" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//               <path d="M164.6,78A32,32,0,1,1,196,116" fill="none" stroke="#000000" stroke-linecap="round"
+//                 stroke-linejoin="round" stroke-width="16"></path>
+//             </svg>
+//             <figcaption class="mt-2 font-thin tracking-wider">
+//               Ask Our Virtual Agent
+//             </figcaption>
+//           </figure>
+//           </div>
+//         </Link>
+//       </div>
+//     </section>
     <hr class="mt-4 mb-8" />
     <h6 class="text-center prose text-3xl my-12">Find Your Solution Below</h6>
     <section class="flex gap-4 items-stretch mb-10">
@@ -253,7 +253,7 @@ const Hero = () => {
           <p class="text-lg">Try these troubleshooting steps to fix the scan and/or print issues.</p>
         </div>
         <div>
-          <Link href="/contact-us">
+          <Link href="/download">
             <div className="!inline-block bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Fix Scan/Print
             </div>
@@ -278,7 +278,7 @@ const Hero = () => {
             page.</p>
         </div>
         <div>
-          <Link href="/contact-us">
+          <Link href="/download">
             <div className="!inline-block bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Get Support
             </div>
@@ -293,7 +293,7 @@ const Hero = () => {
             queue.</p>
         </div>
         <div>
-          <Link href="/contact-us">
+          <Link href="/download">
             <div className="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">
             Print and Scan Doctor
             </div>
