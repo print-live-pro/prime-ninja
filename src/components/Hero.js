@@ -128,10 +128,9 @@ const Hero = () => {
             </div>
             <ul>
               <li><span class="text-2xl">&#x2022;</span> Get fast and complimentary support by calls our experts. We
-                want to help!</li>
-//               <li><span class="text-2xl">&#x2022;</span> Our priority is to take care of you. Call to resolve questions
-//                 about HP+ and get help with printer setup.</li>
-            </ul>
+                want to help!
+                 </li>          
+              </ul>
             <div>
                   <h2 className='text-3xl font-bold text-center mt-10 mb-5'>Toll Free (USA/CA): +1-844-557-0415</h2>
             </div>
