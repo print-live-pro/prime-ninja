@@ -110,7 +110,7 @@ const Hero = () => {
               <svg class="!opacity-50 border-2 border-black w-[50px] h-[50px] p-1 rounded-full"
                 xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
                 <rect width="256" height="256" fill="none"></rect>
-                <circle cx="128" cy="140" r="40" fill="none" stroke="#000000" stroke-linecap="round"
+                <circle cx="128" cy="140" r="40" fill="none" stroke="#000000" stroke-linecap="round"f
                   stroke-linejoin="round" stroke-width="16"></circle>
                 <path d="M196,116a59.8,59.8,0,0,1,48,24" fill="none" stroke="#000000" stroke-linecap="round"
                   stroke-linejoin="round" stroke-width="16"></path>
